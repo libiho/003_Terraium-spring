@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Terraium by mini</title>
+<title>Terrarium by mini</title>
 </head>
 <body>
  <jsp:forward page="WEB-INF/views/main.jsp"/>
