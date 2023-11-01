@@ -4,24 +4,91 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "mybatis-3-mapper.dtd" >
 
 <mapper namespace="memberMapper">
-  
-  
-  
-  <resultMap type="Member" id="memberResultSet">
-  
-  	<result column="USER_ID" property="userId"/>
-  	<result column="USER_PWD" property="userPwd"/>
-  	<result column="USER_NAME" property="userName"/>
-  	<result column="EMAIL" property="email"/>
-  	<result column="GENDER" property="gender"/>
-  	<result column="AGE" property="age"/>
-  	<result column="PHONE" property="phone"/>
-  	<result column="ADDRESS" property="address"/>
-  	<result column="ENROLL_DATE" property="enrollDate"/>
-  	<result column="MODIFY_DATE" property="modifyDate"/>
-  	<result column="STATUS" property="status"/>
-  
-  </resultMap>
-  
-  
-  </mapper>
+
+
+
+	<resultMap type="Member" id="memberResultSet">
+
+		<result column="USER_ID" property="userId" />
+		<result column="USER_PWD" property="userPwd" />
+		<result column="USER_NAME" property="userName" />
+		<result column="EMAIL" property="email" />
+		<result column="GENDER" property="gender" />
+		<result column="AGE" property="age" />
+		<result column="PHONE" property="phone" />
+		<result column="ADDRESS" property="address" />
+		<result column="ENROLL_DATE" property="enrollDate" />
+		<result column="MODIFY_DATE" property="modifyDate" />
+		<result column="STATUS" property="status" />
+
+
+		<result column="user_nick" property="userNick" />
+		<result column="profile" property="profile" />
+		<result column="token" property="token" />
+		<result column="user_no" property="userNo" />
+		<result column="social" property="social" />
+
+
+
+	</resultMap>
+
+
+
+	<insert id="insertKakao" parameterType="java.util.HashMap">
+
+		INSERT
+		INTO MEMBER
+			(
+				USER_ID
+				, USER_PWD
+				, USER_NAME
+				, EMAIL
+				, GENDER
+				, USER_NO
+				, SOCIAL
+				, PROFILE
+			)
+		VALUES
+			(
+				#{email}
+				, 'kakao'
+				, #{nickname}
+				, #{email}
+				, null
+				, SEQ_TERR_MEMBER.NEXTVAL
+				, 'KAKAO'
+				, #{profile_image}
+			)
+
+	</insert>
+
+
+	<select id="findKakao" parameterType="java.util.HashMap" resultMap="memberResultSet">
+
+		select
+			 user_no
+			, user_id
+			, user_pwd
+			, user_name
+			, user_nick
+			, email
+			, profile
+			, gender
+			, social
+			, enroll_date
+			, token
+			, status
+		from member
+		where user_id = #{email}
+		and status = 'Y'
+
+
+
+	</select>
+
+
+
+
+
+
+</mapper>

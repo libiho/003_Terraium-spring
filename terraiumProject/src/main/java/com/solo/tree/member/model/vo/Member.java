@@ -26,4 +26,13 @@ public class Member {
 	 private Date enrollDate;
 	 private Date modifyDate;
 	 private String status;
+	 
+	 
+	 private String userNick;
+	 private String profile;
+	 private String token;
+	 private String userNo;
+	 private String social;
+	 
+	 
 }

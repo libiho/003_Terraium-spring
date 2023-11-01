@@ -19,7 +19,7 @@
         <div class="login">
             <h2>Log-in</h2>
             <div class="login_sns">
-            <li><a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=3b117227ae449f5a74e1d81dda8cfc66&redirect_uri=http://localhost:8088/tree/login.me"><img height="50px" src="resources/img/login/kakaotalk.png"></a></li>
+            <li><a href="https://kauth.kakao.com/oauth/authorize?client_id=3b117227ae449f5a74e1d81dda8cfc66&redirect_uri=http://localhost:8088/tree/kakao&response_type=code"><img height="50px" src="resources/img/login/kakaotalk.png"></a></li>
             <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
             <li><a href=""><i class="fab fa-twitter"></i></a></li>
             </div>
